@@ -335,11 +335,7 @@ public class Table<T> extends Content {
             var cell = HtmlTree.DIV(cellStyle).addUnchecked(c.isEmpty() ? Text.EMPTY : c);
             boolean matchFound = c.isEmpty() || checkFormElements.matcher(c.toString()).find();
             cell.addStyle(rowStyle);
-            if (!matchFound) {
-                cell.put(HtmlAttr.ROLE, "tablist")
-                    .put(HtmlAttr.TABINDEX, "0");
-            }
-
+    
             for (String tabClass : tabClasses) {
                 cell.addStyle(tabClass);
                 if (!matchFound) {
